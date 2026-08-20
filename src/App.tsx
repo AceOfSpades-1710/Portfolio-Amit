@@ -12,7 +12,6 @@ import "./App.css";
 import Home from "./Home/Home";
 import Articles from "./Articles/articles";
 import Weekends from "./Weekends/Weekends";
-import BlogCard from "./Blogs/BlogCard";
 import Blogs from "./Blogs/Blogs";
 
 
