@@ -140,10 +140,10 @@ function Cards() {
       <button
         className="otherarticles"
         onClick={() => {
-          window.location.assign("https://portfolio-amit-nu.vercel.app/In-Media");
+          window.location.assign("/In-Media");
         }}
       >
-        Other Discussions
+        Other Articles
       </button>
 
     </>
