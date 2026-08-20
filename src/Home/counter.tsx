@@ -38,9 +38,6 @@ function Counter() {
       const counterElements =
         gsap.utils.toArray<HTMLElement>(".counter-number");
 
-      const counterObject = {
-        value: 0,
-      };
 
       const timeline = gsap.timeline({
         scrollTrigger: {
