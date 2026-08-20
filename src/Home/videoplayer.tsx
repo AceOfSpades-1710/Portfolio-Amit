@@ -20,12 +20,12 @@ function VideoSection() {
         <button
           className="button"
           onClick={() => {
-            window.location.assign("https://portfolio-amit-nu.vercel.app/In-Media");
+            window.location.assign("/In-Media");
           }}
         >
           Other Discussions
         </button>
-      </div>
+              </div>
 
     </section>
   );
