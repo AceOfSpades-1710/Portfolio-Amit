@@ -21,9 +21,9 @@ function Cards() {
     {
       logo: GT,
       publication: "Global Times",
-      thumbnail: "/thumbnail.png",
-      title: "Article Title Goes Here",
-      url: "https://example.com/article",
+      thumbnail: "https://www.globaltimes.cn/Portals/0/attachment/2025/2025-03-31/a1237505-67c8-4551-ae23-be93aa4ccbb4.jpeg",
+      title: "China does not give ‘lessons’; it shares experiences",
+      url: "https://www.globaltimes.cn/page/202608/1367680.shtml",
     },
 
     {
