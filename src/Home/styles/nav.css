@@ -1,0 +1,32 @@
+.nav {
+  position:absolute;
+  top: 2.2%;
+  width: auto;
+  padding: 14px 28px;
+  opacity: 1;
+  left: 29.4%;
+  pointer-events: auto;
+  margin: 0 auto;
+  
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: "PT Mono", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: black;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}

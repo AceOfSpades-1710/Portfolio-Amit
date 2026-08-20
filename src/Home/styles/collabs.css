@@ -1,0 +1,194 @@
+.collaborations-wrapper {
+  width: 56%;
+  height: 70px;
+
+  display: flex;
+  align-items: stretch;
+
+  overflow: hidden;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  background: #f1f1f100;
+  
+}
+
+
+/* ==============================================
+   STATIC COLLABORATIONS LABEL
+   ============================================== */
+
+.collaborations-label {
+  flex-shrink: 0;
+
+  width: 12%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 20px;
+
+  background: #111;
+  color: #f1f1f1;
+
+  font-family: Poiret One, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+
+  z-index: 2;
+}
+
+
+/* ==============================================
+   CAROUSEL WINDOW
+   ============================================== */
+
+.news-carousel {
+  position: relative;
+
+  flex: 1;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* ==============================================
+   FADE EDGES
+   ============================================== */
+
+.news-carousel::before,
+.news-carousel::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 60px;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+.news-carousel::before {
+  left: 0;
+
+  background: linear-gradient(
+    to right,
+    #f1f1f100,
+    transparent
+  );
+}
+
+
+.news-carousel::after {
+  right: 0;
+
+  background: linear-gradient(
+    to left,
+    #f1f1f1,
+    transparent
+  );
+}
+
+
+/* ==============================================
+   MOVING TRACK
+   ============================================== */
+
+.news-track {
+  display: flex;
+
+  align-items: center;
+
+  width: max-content;
+
+  animation: newsScroll 35s linear infinite;
+}
+
+
+/* ==============================================
+   INDIVIDUAL NEWS ITEM
+   ============================================== */
+
+.news-item {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 0 35px;
+
+  height: 70px;
+
+}
+
+
+/* ==============================================
+   LOGO
+   ============================================== */
+
+.news-icon {
+  width: 60%;
+  height: 60%;
+
+  object-fit: contain;
+}
+
+
+/* ==============================================
+   PUBLICATION NAME
+   ============================================== */
+
+.news-text {
+  font-family: PT Mono, sans-serif;
+
+  font-size: 100%;
+
+  font-weight: 400;
+
+  white-space: nowrap;
+
+  color: #111;
+}
+
+
+/* ==============================================
+   ANIMATION
+   ============================================== */
+
+@keyframes newsScroll {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+/* ==============================================
+   PAUSE ON HOVER
+   ============================================== */
+
+.news-carousel:hover .news-track {
+  animation-play-state: paused;
+}

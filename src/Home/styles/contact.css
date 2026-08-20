@@ -1,0 +1,154 @@
+.contact {
+  width: 60%;
+  min-height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #f1f1f1b4;
+  margin: 10% auto;
+}
+
+
+/* =========================
+   LEFT SIDE
+   ========================= */
+
+.contact-info {
+  padding: 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.contact-info h2 {
+  font-family: "poiret one", serif;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+
+    font-weight: 400;
+  line-height: 0.85;
+
+  margin: 0 0 40px;
+}
+
+.contact-description {
+  max-width: 500px;
+
+  font-family: "pt mono", serif;
+  font-size: 100%;
+
+    line-height: 1.2;
+
+    color: #222;
+}
+
+/* =========================
+   RIGHT SIDE
+   ========================= */
+
+.contact-form-container {
+  padding: 60px;
+
+  display: flex;
+  align-items: center;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  font-family: "Gruppo", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 2px solid #000;
+  background: #f1f1f1b4;
+
+  padding: 14px;
+
+  font-family: "poppins", serif;
+  font-size: 1rem;
+
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background: #fff;
+  box-shadow: 5px 5px 0 #000;
+}
+
+.send-button {
+  padding: 14px 25px;
+
+  border: 2px solid #000;
+  background: #000;
+  color: #fff;
+
+  font-family: "gruppo", serif;
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.send-button:hover {
+  background: #f1f1f1b4;
+  color: #000;
+  box-shadow: 5px 5px 0 #000;
+}
+
+.form-status {
+  margin-top: 20px;
+
+  font-family: "Times New Roman", serif;
+  font-weight: 700;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 800px) {
+
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    border-right: none;
+    border-bottom: 2px solid #000;
+    padding: 40px 25px;
+  }
+
+  .contact-form-container {
+    padding: 40px 25px;
+  }
+
+}

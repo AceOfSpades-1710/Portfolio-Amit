@@ -1,0 +1,87 @@
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+
+    --background: #f1f1f1;
+    --bg-image: url("/bgwe.png");
+
+    --bg-x: 0px;
+    --bg-y: 0px;
+    --bg-rotate: 0deg;
+
+    overflow-x: clip;
+
+    background: var(--background);
+}
+
+
+/* ======================================================
+   BACKGROUND IMAGE
+   ====================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    opacity: 0.2;
+    filter: blur(2px);
+
+    z-index: -1;
+
+    transform:
+        translate3d(
+            var(--bg-x),
+            var(--bg-y),
+            0
+        )
+        rotate(var(--bg-rotate))
+        scale(1.02);
+
+    transition: transform 0.15s ease-out;
+}
+
+
+/* ======================================================
+   HOME
+   ====================================================== */
+
+body.home-page {
+    --background: #f1f1f1;
+    --bg-image: url("/bgwe.png");
+}
+
+
+/* ======================================================
+   ARTICLES
+   ====================================================== */
+
+body.articles-page {
+    --background: #f1f1f1;
+    --bg-image: url("/bgwe.png");
+}
+
+
+/* ======================================================
+   WEEKENDS
+   ====================================================== */
+
+body.weekends-page {
+    --background: #000000da;
+    --bg-image: url("/bgwee.png");
+}

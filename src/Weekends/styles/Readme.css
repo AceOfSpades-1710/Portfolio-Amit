@@ -1,0 +1,220 @@
+/*
+ * Readme continues directly from Aboutwe.css's positioning system.
+ *
+ * .weabout uses: top:0; left:20%; width:60%; height:100vh;
+ * grid-template-columns: 45% 55%; padding: 12vh 5vw 8vh;
+ *
+ * The values below approximate where that grid's two columns land in the
+ * viewport, expressed as plain vh/vw so GSAP can animate top/left/width
+ * smoothly (CSS grid can't be tweened, so once things need to move partway
+ * through the animation, absolute positioning takes over). Check these
+ * against your real rendered AboutWeekends layout in devtools and nudge
+ * the numbers here — and the matching ones in Readme.tsx's stage-3 tween —
+ * until the handoff between the two sections is seamless.
+ */
+
+.readme {
+    position: relative;
+    height: 100vh;
+    color: #f1f1f1;
+}
+
+.readme-pin {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================
+   LEFT SIDE — TEXT (same copy/position as AboutWeekends)
+   ========================= */
+
+.readme-content {
+    position: absolute;
+
+    /*
+     * mirrors .weabout-content's corrected, un-offset position:
+     * .weabout is left:20% width:60%, padding 12vh 5vw 8vh,
+     * grid-template-columns 45% 55% -> column 1 starts at
+     * 20vw + 5vw(padding) = 25vw, and align-self:end puts its
+     * bottom edge at the container's bottom padding, 8vh.
+     */
+    left: 25vw;
+    bottom: 8vh;
+    margin-bottom: 7.7%;
+    margin-right: 0%;
+
+    max-width: 600px;
+
+    pointer-events: none;
+}
+
+.readme-label {
+    font-family: Poppins;
+}
+
+.readme-content h2 {
+    margin: 0 0 35px;
+
+    font-family: "Poiret One", serif;
+
+    font-size: clamp(3rem, 5vw, 5.5rem);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+}
+
+.readme-content h2 span {
+    display: inline-block;
+}
+
+.readme-description {
+    max-width: 62%;
+
+    margin: 0 0 20px;
+
+    font-family: "PT Mono", serif;
+
+    font-size: 100%;
+
+    line-height: 1.2;
+
+    color: #dfdfdf;
+}
+
+
+/* =========================
+   BOOKSHELF — rises from the bottom of the left column,
+   then shrinks into the top-center "logo" position
+   ========================= */
+
+.readme-bookshelf {
+    position: absolute;
+
+    /*
+     * column 1 of the corrected .weabout grid: starts at 25vw
+     * (20vw container + 5vw padding), width = 45% of the
+     * padded-in container (50vw) = 22.5vw
+     */
+    left: 22vw;
+    bottom: 0;
+    width: 22.5vw;
+    height: 110vh;
+
+    z-index: 3;
+
+    will-change: transform, top, left, width, height;
+}
+
+.readme-bookshelf img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================
+   BICYCLE — starts at AboutWeekends' rest position (right column),
+   then joins the bookshelf as a small logo mark, rotated 90deg
+   ========================= */
+
+.readme-bicycle {
+    position: absolute;
+
+    /*
+     * column 2 of the corrected .weabout grid: starts at
+     * 20vw + 5vw(padding) + 22.5vw(column 1) = 47.5vw, width =
+     * 55% of the padded-in 50vw = 27.5vw. Row is 80vh tall
+     * starting at 12vh; align-self:center vertically centers
+     * the 75vh image, so top ≈ 12vh + (80vh-75vh)/2 = 14.5vh.
+     * .weabout-image's margin-bottom:8% nudges it up slightly
+     * further in the live layout — check devtools and adjust.
+     */
+    top: 6.2vh;
+    left: 47.5vw;
+    width: 27.5vw;
+    height: 75vh;
+
+    z-index: 4;
+
+    transform-origin: center center;
+
+    will-change: transform, top, left, width, height, rotate;
+}
+
+.readme-bicycle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================
+   NEW COPY — rises in from the bottom once the logo settles
+   ========================= */
+
+.readme-reveal {
+    position: absolute;
+    left: 50%;
+    bottom: 10vh;
+    transform: translateX(-50%);
+
+    width: min(600px, 80vw);
+    text-align: center;
+
+    z-index: 2;
+}
+
+.readme-reveal-label {
+    margin: 0 0 12px;
+    font-family: Poppins;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    color: #dfdfdf;
+}
+
+.readme-reveal h3 {
+    margin: 0 0 18px;
+    font-family: "Poiret One", serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 400;
+}
+
+.readme-reveal-description {
+    margin: 0;
+    font-family: "PT Mono", serif;
+    line-height: 1.4;
+    color: #dfdfdf;
+}
+
+
+/* Respect reduced-motion: show the end state, skip the choreography.
+   (Readme.tsx also early-returns before wiring GSAP in this case.) */
+@media (prefers-reduced-motion: reduce) {
+    .readme-bookshelf {
+        top: 6vh;
+        left: 50%;
+        bottom: auto;
+        width: 90px;
+        height: 110px;
+        transform: translateX(-50%);
+    }
+
+    .readme-bicycle {
+        top: 7vh;
+        left: 50%;
+        width: 60px;
+        height: auto;
+        transform: translateX(-50%) rotate(90deg);
+    }
+
+    .readme-content,
+    .readme-reveal {
+        opacity: 0;
+    }
+}

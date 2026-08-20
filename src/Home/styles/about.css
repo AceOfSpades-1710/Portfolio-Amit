@@ -1,0 +1,104 @@
+.about {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100vh;
+    
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    padding: 12vh 5vw 8vh;
+
+    box-sizing: border-box;
+
+    z-index: 2;
+
+    pointer-events: none;
+    
+}
+
+
+/* =========================
+   LEFT SIDE
+   ========================= */
+
+.about-content {
+    grid-column: 1;
+
+    align-self: end;
+
+    max-width: 600px;
+
+    opacity: 0;
+
+    transform: translateX(-80px);
+
+    padding-bottom: 5vh;
+
+    pointer-events: auto;
+}
+
+
+.about-content h2 {
+    margin: 0 0 35px;
+
+    font-family: "Poiret One", serif;
+
+    font-size: clamp(3rem, 5vw, 5.5rem);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+}
+
+.about-description {
+    max-width: 520px;
+
+    margin: 0 0 20px;
+
+    font-family: "PT Mono", serif;
+
+    font-size: 100%;
+
+    line-height: 1.2;
+
+    color: #222;
+}
+
+
+/* =========================
+   RIGHT IMAGE
+   ========================= */
+
+.about-image {
+    grid-column: 2;
+
+    align-self: center;
+
+    width: 100%;
+    height: 75vh;
+    padding-left: 4vw;
+
+    box-sizing: border-box;
+
+    opacity: 0;
+
+    transform: translateX(100px);
+
+    pointer-events: auto;
+    
+}
+
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 10%;
+    object-fit: cover;
+
+    display: block;
+}

@@ -1,0 +1,40 @@
+.wetake-top-button {
+  position: fixed;
+
+  right: 30px;
+  bottom: 30px;
+
+  width: 70px;
+  height: 70px;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  z-index: 99999;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.wetake-top-button img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wetake-top-button-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}

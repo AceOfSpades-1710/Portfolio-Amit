@@ -1,0 +1,264 @@
+.blogs-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/* =========================
+   BLOG ROW
+   ========================= */
+
+.blog-card {
+  width: 100%;
+  min-height: 220px;
+  display: flex;
+  padding: 30px 0;
+  border-bottom: 1px solid #222;
+  box-sizing: border-box;
+}
+
+/* =========================
+   THUMBNAIL
+   ========================= */
+
+.blog-thumbnail {
+  width: 20%;
+  min-width: 20%;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+.blog-thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnail-placeholder {
+  width: 100%;
+  height: 160px;
+  border: 1px dashed #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-family: "pt mono", serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   BLOG INFO
+   ========================= */
+
+.blog-info {
+  width: 80%;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* =========================
+   TITLE + LOGO
+   ========================= */
+
+.blog-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.blog-title {
+  flex: 1;
+  margin: 0;
+  font-family: "poppins", serif;
+  font-size: 32px;
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.blog-logo,
+.logo-placeholder {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.logo-placeholder {
+  border: 1px dashed #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-family: "pt mono", serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   SUMMARY
+   ========================= */
+
+.blog-summary {
+  max-width: 90%;
+  margin: 20px 0 0;
+  font-family: "poppins", serif;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #333;
+}
+
+/* =========================
+   PAGINATION
+   ========================= */
+
+.pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 45px 0;
+}
+
+/* PAGE NUMBERS */
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ALL PAGINATION BUTTONS */
+
+.pagination button {
+  border: none;
+  background: transparent;
+  font-family: "Times New Roman", serif;
+  cursor: pointer;
+}
+
+/* PAGE NUMBER */
+
+.pagination-number {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+/* ACTIVE PAGE */
+
+.pagination-number.active {
+  background: #111;
+  color: white;
+  border-radius: 50%;
+}
+
+/* HOVER */
+
+.pagination-number:not(.active):hover {
+  background: #ddd;
+  border-radius: 50%;
+}
+
+/* ARROWS */
+
+.pagination-arrow {
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.pagination-arrow:hover:not(:disabled) {
+  opacity: 0.5;
+}
+
+.pagination-arrow:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .blog-card {
+    min-height: auto;
+    padding: 20px 0;
+  }
+
+  .blog-thumbnail {
+    width: 30%;
+    min-width: 30%;
+    padding-right: 15px;
+  }
+
+  .blog-info {
+    width: 70%;
+    padding-left: 15px;
+  }
+
+  .thumbnail-placeholder {
+    height: 100px;
+  }
+
+  .blog-title {
+    font-size: 22px;
+  }
+
+  .blog-summary {
+    max-width: 100%;
+    font-size: 15px;
+  }
+
+  .blog-logo,
+  .logo-placeholder {
+    width: 45px;
+    height: 45px;
+  }
+
+  .pagination {
+    padding: 30px 0;
+  }
+
+  .pagination-numbers {
+    gap: 2px;
+  }
+
+  .pagination-number {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* =========================
+   BLOG TITLE LINK
+   ========================= */
+
+.blog-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-title a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}

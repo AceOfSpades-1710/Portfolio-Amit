@@ -1,0 +1,114 @@
+.intro-scroll {
+    position: relative;
+    height: 2500px;
+    width: 60%;
+    margin: 0 auto;
+    overflow-x: clip;
+}
+
+.title-stage {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* =========================
+   AMIT
+   ========================= */
+
+.uppertitle {
+    position: absolute;
+
+    top: 10%;
+    left: 50%;
+
+    margin: 0;
+
+    font-size: 10vw;
+
+    font-family: "Playpen Sans Deva", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    z-index: 10;
+
+    transform: translateX(-50%);
+    transform-origin: center center;
+
+    max-width: 100vw;
+}
+
+
+/* =========================
+   KUMAR
+   ========================= */
+
+.lowertitle {
+    position: absolute;
+
+    top: 40%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    font-size: 10vw;
+
+    font-family: "Playpen Sans Deva", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    z-index: 9;
+}
+
+
+/* =========================
+   SCROLL NOTE
+   ========================= */
+
+.sidenote {
+    position: absolute;
+
+    top: 90%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    font-family: "Poiret One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+
+    text-align: center;
+
+    z-index: 11;
+}
+
+
+.exploremore {
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.exploremore img {
+    width: 35px;
+    height: 35px;
+
+    filter: brightness(0) saturate(100%);
+}

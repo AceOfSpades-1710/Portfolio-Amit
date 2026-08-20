@@ -1,0 +1,127 @@
+.weabout {
+    position: absolute;
+
+    /*
+     * EXACT SAME VIEWPORT POSITION AS HOME ABOUT
+     *
+     * .intro-scroll is 60% wide and centered:
+     * left edge = 20vw
+     * right edge = 80vw
+     *
+     * The home .about fills that entire container.
+     */
+    top: 0;
+    left: 20%;
+
+    width: 60%;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 45% 55%;
+
+    padding: 12vh 5vw 8vh;
+
+    box-sizing: border-box;
+
+    z-index: 2;
+
+    pointer-events: none;
+    color: #f1f1f1;
+}
+
+
+/* =========================
+   LEFT SIDE
+   ========================= */
+
+.weabout-label {
+    /*
+     * Removed the previous margin-top: 50%.
+     *
+     * Home .about-label has no equivalent vertical offset,
+     * so keeping it here would prevent exact overlap.
+     */
+    font-family: Poppins;
+}
+
+
+.weabout-content {
+    grid-column: 1;
+
+    align-self: end;
+
+    max-width: 600px;
+
+    opacity: 1;
+
+    transform: translateX(-80px);
+
+    padding-bottom: 5vh;
+
+    pointer-events: auto;
+    margin-left: 18%;
+    margin-top: 33%;
+}
+
+
+.weabout-content h2 {
+    margin: 0 0 35px;
+
+    font-family: "Poiret One", serif;
+
+    font-size: clamp(3rem, 5vw, 5.5rem);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+}
+
+
+.weabout-description {
+    max-width: 100%;
+
+    margin: 0 0 20px;
+
+    font-family: "PT Mono", serif;
+
+    font-size: 100%;
+
+    line-height: 1.2;
+
+    color: #dfdfdf;
+}
+
+
+/* =========================
+   RIGHT IMAGE
+   ========================= */
+
+.weabout-image {
+    grid-column: 2;
+
+    align-self: center;
+
+    width: 100%;
+    height: 75vh;
+
+    padding-left: 4vw;
+
+    box-sizing: border-box;
+
+    opacity: 1;
+
+    pointer-events: auto;
+    margin-bottom: 8%;
+}
+
+
+.weabout-image img {
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    border-radius: 0%;
+
+    object-fit: cover;
+
+    display: block;
+}
